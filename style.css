@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Gloria+Hallelujah&family=Montserrat:ital,wght@0,200;0,300;0,400;0,600;1,200;1,300;1,400;1,600&family=Poppins:ital,wght@0,100;0,200;0,400;0,700;1,200;1,400;1,700&display=swap');
+
+*,
+body,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'poppins', sans-serif;
+    background-color: var(--bg);
+}
+
+:root {
+    --bg: #F4EEE0;
+    --primary: #393646;
+    --secondary: #4F4557;
+    --light: #6D5D6E;
+}
+
+/* navbar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.5rem 2rem;
+    color: var(--primary);
+}
+
+nav .logo {
+    position: relative;
+    display: flex;
+}
+
+nav .logo:hover .moon {
+    box-shadow: 0 0 10px #393646;
+    transform: scale(1.1) rotate(20deg);
+}
+
+nav .logo h3 {
+    font-family: 'gloria hallelujah', cursive;
+    font-size: 2rem;
+
+    cursor: pointer;
+}
+
+nav .logo .moon {
+    height: 3rem;
+    width: 3rem;
+
+    border-radius: 50%;
+    border-right: 3px solid var(--primary);
+    border-top: 1px solid var(--light);
+
+    position: absolute;
+    right: -2rem;
+
+    transition: 0.3s ease-in;
+}
+
+nav .logo .moon .circle1 {
+    height: 0.5rem;
+    width: 0.5rem;
+
+    border-radius: 50%;
+    border-right: 3px solid var(--primary);
+    border-top: 1px solid var(--light);
+    border-left: 1px solid var(--light);
+    position: absolute;
+
+    right: 1rem;
+    top: 0.5rem;
+}
+
+nav .logo .moon .circle2 {
+    height: 0.2rem;
+    width: 0.2rem;
+
+    border-radius: 50%;
+    border-right: 3px solid var(--primary);
+    border-top: 2px solid var(--light);
+    border-bottom: 1px solid var(--light);
+    position: absolute;
+
+    right: 0.5rem;
+    top: 2rem;
+}
+
+nav .nav-links a {
+    margin-right: 0.5rem;
+    text-decoration: none;
+    color: var(--primary);
+
+    position: relative;
+}
+
+nav .nav-links a::after {
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+    border-radius: 0.5rem;
+    background-color: var(--light);
+
+    transform-origin: right;
+    transform: scale(0);
+    transition: transform 0.3s ease-out;
+}
+
+
+nav .nav-links a:hover::after {
+    transform: scale(1);
+    transform-origin: left;
+}
+
+/* navbar end */
+
+/* home */
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 100vh;
+    width: 100%;
+    padding: 6rem 6%;
+
+    background-image: url('img/hero-1.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+}
+
+#home::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    height: 40%;
+    width: 100%;
+
+    background: linear-gradient(to top, #f4eee069, rgba(0, 0, 0, 0));
+}
+
+#home .content {
+    display: flex;
+    flex-direction: column;
+    line-height: 2.5rem;
+}
+
+#home .content h1 {
+    font-size: 3rem;
+    color: var(--bg);
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
+}
+
+#home .content p {
+    font-size: 1.5rem;
+    color: var(--bg);
+}
+
+#home .content p span {
+    font-size: 2rem;
+    font-weight: 600;
+    color: orange;
+}
+
+#home button {
+    margin-top: 1rem;
+    width: 10rem;
+    padding: 0.5rem 0.5rem;
+
+    border-radius: 0.7rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--bg);
+    background-color: transparent;
+
+    color: var(--bg);
+    cursor: pointer;
+
+    transition: 0.3s ease-in;
+}
+
+#home button:hover {
+    box-shadow: 0px 0px 10px orange, 0px 0px 10px white, 0 0 10px var(--primary);
+}
+
+/* home end */
